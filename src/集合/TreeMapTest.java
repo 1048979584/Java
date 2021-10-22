@@ -3,6 +3,13 @@ package 集合;
 import java.util.*;
 
 public class TreeMapTest {
+    /**
+     * 自然排序：TreeMap的所有的Key必须实现Comparable接口，而且所有的Key应该是同一类对象
+     * 定制排序：创建TreeMap时，传入一个Comparator对象，该对象通过对key进行排序。此时不需要Map的key实现Comparable接口
+     *
+     * TreeMap判断两个Key相等的标准：两个Key通过compareTo()方法或者compare()方法返回0
+     * @param args
+     */
     public static void main(String[] args) {
         test2();
     }

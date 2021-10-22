@@ -7,15 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * void add(int index, Object ele):在index位置插入ele元素
- * boolean addAll(int index, Collection eles):从index位置开始将eles中的所有元素添加进来
- * Object get(int index):获取指定index位置的元素
- * int indexOf(Object obj):返回obj在集合中首次出现的位置
- * int lastIndexOf(Object obj):返回obj在当前集合中末次出现的位置
- * Object remove(int index):移除指定index位置的元素，并返回此元素
- * Object set(int index, Object ele):设置指定index位置的元素为ele
- * List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的子集合
- * <p>
  * 总结：常用方法
  * 增：add(Object obj)
  * 删：remove(int index) / remove(Object obj)
@@ -42,28 +33,38 @@ public class listTest {
         list.add(1);
         list.add(2);
         list.add(new Person("dave", 28));
+
+        System.out.println("一.在index位置插入ele元素");
         list.add(0, "first");
         Iterator iterator = list.iterator();
         for (Object obj : list) {
             System.out.println(obj);
         }
+        System.out.println("二.从index位置开始将eles中的所有元素添加进来");
         List list2 = Arrays.asList(1,'a',"bc","abc");
         list.addAll(list2);
         System.out.println(list);
 
+        System.out.println("三.获取指定index位置的元素");
+        System.out.println(list.get(2));
+
+        System.out.println("四.返回obj在集合中出现的位置");
         int index = list.indexOf("abc");
         int lastIndex = list.lastIndexOf("abc");
         System.out.println("第一次出现位置"+index);
         System.out.println("最后一次出现位置"+lastIndex);
 
+        System.out.println("五.设置指定index位置的元素为ele");
         list.set(0,"second");
         System.out.println(list);
 
+        System.out.println("六.返回从fromIndex到toIndex位置的子集合");
         List sub = list.subList(3,5);
         System.out.println(sub);
 
-        list.remove(2);
-        System.out.println(list);
+        System.out.println("七.移除指定index位置的元素，并返回此元素");
+        Object obj = list.remove(2);
+        System.out.println(obj);
         list.remove(new Integer(2) );  //删除对象
         list.remove("abc");
         System.out.println(list);

@@ -23,17 +23,16 @@ public class IteratorTest {
         collection.add(per);
         collection.add(new String("Tom"));
 
-         Iterator iterator = collection.iterator();
-
         //迭代方法一
 //        for (int i = 0; i < collection.size(); i++) {
 //            System.out.println(iterator.next());
 //        }
-        //迭代方法二
+        //迭代方法二,实现iterator接口
+        Iterator iterator = collection.iterator();
         while (iterator.hasNext()) {
             Object obj = iterator.next();
             if ("Tom".equals(obj)) {
-                iterator.remove();
+                iterator.remove();   //
             }
         }
 
@@ -42,6 +41,7 @@ public class IteratorTest {
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
+
         //增强for循环
         for(Object obj :collection){
             System.out.println(obj);

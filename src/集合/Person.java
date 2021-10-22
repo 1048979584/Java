@@ -3,7 +3,7 @@ package 集合;
 import java.util.Objects;
 
 public class Person implements Comparable {
-    private  String name;
+    private String name;
     private int age;
 
     @Override
@@ -42,6 +42,28 @@ public class Person implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        if (o instanceof Person) {
+            Person per = (Person) o;
+            int compare = this.name.compareTo(per.name); //如果两个的name相同则compare=0
+            if (compare != 0) {
+                return compare;
+            } else {
+                return Integer.compare(this.age, per.age);
+            }
+        }
+        else{
+             throw new RuntimeException("输入类型不匹配");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
+
+
+
