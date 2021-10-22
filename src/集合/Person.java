@@ -2,7 +2,7 @@ package 集合;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable {
     private  String name;
     private int age;
 
@@ -40,4 +40,8 @@ public class Person {
         this.age = age;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

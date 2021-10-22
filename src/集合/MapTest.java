@@ -45,6 +45,8 @@ public class MapTest {
      */
     public static void main(String[] args) {
         HashMapTest();
+
+
     }
 
     public static void HashMapTest(){
@@ -117,7 +119,6 @@ public class MapTest {
             Object value = map.get(key);
             System.out.println(key + "=====" + value);
         }
-
 
     }
 }
