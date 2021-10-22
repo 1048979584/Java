@@ -1,5 +1,7 @@
 package 集合;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.util.*;
 
 /**
@@ -87,11 +89,12 @@ public class MapTest {
         System.out.println(map.isEmpty());
         System.out.println(map.equals(map2));
 
-        System.out.println("遍历所有的key");
+        System.out.println("遍历所有的key，并修改指定的key-value");
         Set KeySet = map2.keySet();
         Iterator iterator1 = KeySet.iterator();
         while(iterator1.hasNext()){
-            System.out.println(iterator1.next());
+            Object key = iterator1.next();
+            System.out.println(key);
         }
 
         System.out.println("遍历所有的value");
@@ -101,17 +104,15 @@ public class MapTest {
             System.out.println(iterator3.next());
         }
 
-
         //遍历所有的key-values
-        System.out.println("方式一");
+        System.out.println("方式一，输出map2的值");
         Set entrySet = map2.entrySet();
         Iterator iterator = entrySet.iterator();
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
 
-
-        System.out.println("方式二");
+        System.out.println("方式二,输出map的值");
         Set keySet = map.keySet();
         Iterator iterator2 = keySet.iterator();
         while(iterator2.hasNext()){
@@ -119,6 +120,16 @@ public class MapTest {
             Object value = map.get(key);
             System.out.println(key + "=====" + value);
         }
+
+        System.out.println("修改map中指定的key,但不改变key对应的值");
+        //System.out.println(map.remove(12)); //删除key返回对应的value
+        map.put(14,map.remove(12));
+        System.out.println(map);
+
+        System.out.println("修改map中指定key的value值");
+        map.put(13,"DD");
+        System.out.println(map);
+
 
     }
 }
