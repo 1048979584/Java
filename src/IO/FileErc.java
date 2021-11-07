@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class io {
+public class FileErc {
     public static void main(String[] args) throws IOException {
 //        test();
 //        test1(new File("C:\\Users\\qiuwei\\Desktop\\bug截图"));
